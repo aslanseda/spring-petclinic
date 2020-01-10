@@ -2,9 +2,7 @@ version: '3'
 services:
 
   petclinic-db.default.svc.cluster.local:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile.db
+    image: sdaaslan/purple-project-db:1.0.0
     ports:
       - "3306:3306"
     environment:
@@ -16,9 +14,7 @@ services:
   petclinic:
     depends_on:
     - petclinic-db.default.svc.cluster.local
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile.app
-#    ports:
-#      - "8080:8080"
+    image: sdaaslan/purple-project:1.0.0
+    ports:
+      - "8080:80"
 #      - "8000:8000"
