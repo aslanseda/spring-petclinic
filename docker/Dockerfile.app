@@ -5,7 +5,7 @@ WORKDIR /code
 ADD pom.xml /code/pom.xml
 ADD src /code/src
 RUN ["mvn", "package", "-DskipTests=true"]
-RUN ["mvn", "sonar:sonar", "-Dsonar.projectKey=purple-team","-Dsonar.host.url=http://34.241.77.156:9000", "-Dsonar.login=ace1ec5b77e570e7eadf82efb3cfa7d37505078b"]
+RUN ["mvn", "sonar:sonar", "-Dsonar.projectKey=purple-team","-Dsonar.host.url=http://54.154.164.61:9000", "-Dsonar.login=ace1ec5b77e570e7eadf82efb3cfa7d37505078b"]
 
 FROM java:8-jre
 
